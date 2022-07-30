@@ -12,4 +12,4 @@ In her responsibilities is setting up a mood, your schedule, weather monitoring 
 
 #### Control:
 
-Alica is controlled via voice commands and discord chat
+Alice is controlled via voice commands and discord chat
