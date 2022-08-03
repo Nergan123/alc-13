@@ -21,8 +21,6 @@
         "greetings master",
         "how was your day",
         "nice to see you again sir",
-        "master",
-        "sir",
         "I was waiting for you sir",
         "good day"
       ]
@@ -46,7 +44,7 @@
         "Alice",
         "I am Alice",
         "home assistance named Alice",
-        "your personal maid Alice"
+        "your personal AI maid Alice"
       ]
     },
   {"tag": "goodbye",
@@ -70,6 +68,29 @@
       "see you later, master",
       "I will be here",
       "good luck, master"
+    ]
+  },
+  {"tag": "chat",
+    "patterns": [
+      "wanna chat",
+      "i want to talk",
+      "how are you",
+      "talk to me",
+      "how was your day",
+      "how do you feel",
+      "it has been a long day",
+      "it's been a long day",
+      "i am lonely",
+      "feeling sad",
+      "bad day",
+      "feeling chatty",
+      "can we talk",
+      "can we chat"
+    ],
+    "responses": [
+      "you want to talk about it?",
+      "perhaps we can talk about it",
+      "do you wish to activate chat mode?"
     ]
   }
 ]
