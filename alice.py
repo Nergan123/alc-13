@@ -1,17 +1,20 @@
 from voice.voice import Voice
-from processing.speech_processing import Speech_processor
+from processing.nlp_model import Language_processing
 
 
 class Alice:
     def __init__(self, lang):
         self.voice = Voice(lang)
-        self.processor = Speech_processor()
+        self.processor = Language_processing()
+        self.processor.create_dataset()
+        self.processor.build_and_train_model()
+        self.processor.load_model()
 
     def start(self):
         while True:
             phrase = self.voice.listen()
-            action = self.processor.choose_action(phrase)
-            response = self.processor.generate_response(action)
+            intents = self.processor.pred_class(phrase)
+            response = self.processor.get_response(intents)
             self.voice.say(response)
-            if action == 'farewell':
+            if 'goodbye' in intents:
                 break

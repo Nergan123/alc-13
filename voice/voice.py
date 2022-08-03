@@ -18,19 +18,19 @@ class Voice:
     def listen(self):
         try:
             with self.microphone as mic:
-                print('Listening...')
                 self.recognizer.adjust_for_ambient_noise(mic, duration=0.5)
+                print('Listening...')
                 audio = self.recognizer.listen(mic)
                 text_output = self.recognizer.recognize_google(audio)
                 print(f'You said: {text_output}')
 
         except sr.RequestError as e:
             print("Could not request results; {0}".format(e))
-            text_output = 'Error'
+            text_output = '__Error__'
 
         except sr.UnknownValueError:
             print("Unknown error occurred")
-            text_output = 'Error'
+            text_output = '__Error__'
 
         return text_output
 

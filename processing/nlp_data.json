@@ -10,7 +10,12 @@
         "good day",
         "nice to see you",
         "good to see you",
-        "alice"
+        "alice",
+        "hello there",
+        "nice day isn't it",
+        "i am back",
+        "i'm back",
+        "how are you doing"
       ],
       "responses": [
         "greetings master",
@@ -29,7 +34,10 @@
         "how are you called",
         "name yourself",
         "introduce yourself",
-        "introduction"
+        "introduction",
+        "can you tell us your name",
+        "show yourself",
+        "and you are"
       ],
       "responses": [
         "I am ALC thirteen, code name Alice",
