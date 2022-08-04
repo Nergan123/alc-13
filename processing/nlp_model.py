@@ -92,9 +92,11 @@ class Language_processing:
         print(model.summary())
         hist = model.fit(x=self.train_X, y=self.train_Y, epochs=200, verbose=1)
         model.save('ai_storage/alice_v1.h5', hist)
+        model.save_weights('ai_storage/weights/alice_weights_v1')
 
     def load_model(self):
         self.model = tf.keras.models.load_model('ai_storage/alice_v1.h5')
+        self.model.load_weights('ai_storage/weights/alice_weights_v1')
 
     def clean_phrase(self, phrase):
         words_in_phrase = nltk.word_tokenize(phrase)

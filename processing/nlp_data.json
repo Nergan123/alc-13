@@ -35,14 +35,13 @@
         "introduction",
         "can you tell us your name",
         "show yourself",
-        "and you are"
+        "and you are",
+        "what are you"
       ],
       "responses": [
         "I am ALC thirteen, code name Alice",
         "my name is Alice",
         "project maid ALC thirteen Alice",
-        "Alice",
-        "I am Alice",
         "home assistance named Alice",
         "your personal AI maid Alice"
       ]
@@ -85,7 +84,8 @@
       "bad day",
       "feeling chatty",
       "can we talk",
-      "can we chat"
+      "can we chat",
+      "say something"
     ],
     "responses": [
       "you want to talk about it?",
