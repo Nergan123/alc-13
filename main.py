@@ -3,7 +3,7 @@ from alice import Alice
 
 def main():
     alice = Alice('en')
-    alice.start()
+    alice.run()
 
 
 if __name__ == '__main__':

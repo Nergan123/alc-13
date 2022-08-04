@@ -92,6 +92,22 @@
       "perhaps we can talk about it",
       "do you wish to activate chat mode?"
     ]
+  },
+  {"tag": "end_chat",
+    "patterns": [
+      "finish this conversation",
+      "end this conversation",
+      "end this dialogue",
+      "i don't want to talk",
+      "be silent",
+      "shut up",
+      "silence"
+    ],
+    "responses": [
+      "Okay. Let's talk about it next time",
+      "We can continue this conversation later",
+      "Will we talk again?"
+    ]
   }
 ]
 }
