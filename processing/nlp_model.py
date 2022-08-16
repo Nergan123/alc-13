@@ -73,14 +73,10 @@ class Language_processing:
 
         model = Sequential()
         model.add(Dense(128, input_shape=input_shape, activation="relu"))
-        model.add(Dropout(0.5))
-        model.add(Dense(128, input_shape=input_shape, activation="relu"))
-        model.add(Dropout(0.5))
-        model.add(Dense(128, input_shape=input_shape, activation="relu"))
-        model.add(Dropout(0.5))
-        model.add(Dense(128, input_shape=input_shape, activation="relu"))
-        model.add(Dropout(0.5))
-        model.add(Dense(128, input_shape=input_shape, activation="relu"))
+        model.add(Dense(128, activation="relu"))
+        model.add(Dense(128, activation="relu"))
+        model.add(Dense(128, activation="relu"))
+        model.add(Dense(128, activation="relu"))
         model.add(Dropout(0.5))
         model.add(Dense(64, activation="relu"))
         model.add(Dropout(0.3))
@@ -136,7 +132,7 @@ class Language_processing:
                 break
 
         if result == '' or intents_list == ['__Error__']:
-            result = "Sorry master, I didn't understand it"
+            result = "error"
         return result
 
 

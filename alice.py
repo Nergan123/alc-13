@@ -31,10 +31,12 @@ class Alice:
             if self.state == 'Action_based':
                 phrase = self.voice.listen()
                 intents = self.processor.pred_class(phrase)
+                print(intents)
                 response = self.processor.get_response(intents)
-                self.voice.say(response)
+                if response != 'error':
+                    self.voice.say(response)
                 print(f'Alice: {response}')
-                if 'goodbye' in intents:
+                if 'goodbye' == intents[0] and len(intents) == 1:
                     break
                 self.get_action(intents[0])
 
@@ -42,13 +44,20 @@ class Alice:
                 phrase = self.voice.listen()
                 intents = self.processor.pred_class(phrase)
                 print(intents)
-                if 'goodbye' in intents:
-                    response = self.processor.get_response(intents)
-                    self.state = 'Action_based'
+                if 'exit chat' in phrase:
+                    self.voice.say('Do you wish to leave chat mode?')
+                    phrase = self.voice.listen()
+                    if 'yes' in phrase:
+                        self.state = 'Action_based'
+                        response = 'Deactivating chat mode'
+                        print(f'Alice: {response}')
+                    else:
+                        response = self.chat.get_response(phrase)
                 else:
                     response = self.chat.get_response(phrase)
                 print(f'Alice: {response}')
-                self.voice.say(response)
+                if response != 'error':
+                    self.voice.say(response)
 
     def get_action(self, action):
         if action == "chat":

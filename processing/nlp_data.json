@@ -49,15 +49,15 @@
   {"tag": "goodbye",
     "patterns": [
       "goodbye",
+      "goodbye alice",
+      "goodbye my friend",
+      "alice goodbye",
+      "my friend goodbye",
       "bye",
-      "see you",
-      "have a great day",
-      "have a nice day",
-      "have a good day",
-      "i will be back soon",
-      "watch the house",
-      "i will be back",
-      "will be back"
+      "alice bye",
+      "my friend bye",
+      "bye alice",
+      "bye my friend"
     ],
     "responses": [
       "See you soon master.",
@@ -85,10 +85,12 @@
       "feeling chatty",
       "can we talk",
       "can we chat",
-      "say something"
+      "say something",
+      "what do you think",
+      "how do you feel"
     ],
     "responses": [
-      "you want to talk about it?",
+      "you want to enter the chat mode?",
       "perhaps we can talk about it.",
       "do you wish to activate chat mode?"
     ]
@@ -99,11 +101,10 @@
       "what's the forecast",
       "how is the weather",
       "how is it outside",
-      "is it sunny",
-      "is it rainy",
-      "is it snowy",
       "give me the weather",
-      "give me a forecast"
+      "give me a forecast",
+      "can you give me a forecast",
+      "can you tell me the weather"
     ],
     "responses": [
       "One second, master. Checking the weather.",
