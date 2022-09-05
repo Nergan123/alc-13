@@ -1,7 +1,7 @@
 from voice.voice import Voice
-from processing.nlp_model import Language_processing
 from voice.chat_module import Chat_module
 from processing.weather import Weather_module
+from processing.phrase_analysis import Phrase_analysis
 import os
 from dotenv import load_dotenv
 
@@ -13,57 +13,57 @@ class Alice:
         key = os.getenv('api_key')
         self.weather = Weather_module(city, lang, key)
         self.voice = Voice(lang)
-        self.processor = Language_processing()
+        self.processor = Phrase_analysis()
         self.chat = Chat_module()
-        if (
-                (not os.path.exists('ai_storage/alice_v1.h5')) or
-                len(os.listdir('ai_storage/weights/')) == 0
-        ):
-            print('model does not exist')
-            self.processor.create_dataset()
-            self.processor.build_and_train_model()
-
-        self.processor.load_model()
-        self.state = 'Action_based'
 
     def run(self):
         while True:
-            if self.state == 'Action_based':
-                phrase = self.voice.listen()
-                intents = self.processor.pred_class(phrase)
-                print(intents)
-                response = self.processor.get_response(intents)
-                if response != 'error':
-                    self.voice.say(response)
-                print(f'Alice: {response}')
-                if 'goodbye' == intents[0] and len(intents) == 1:
-                    break
-                self.get_action(intents[0])
-
-            elif self.state == 'Chat_mode':
-                phrase = self.voice.listen()
-                intents = self.processor.pred_class(phrase)
-                print(intents)
-                if 'exit chat' in phrase:
-                    self.voice.say('Do you wish to leave chat mode?')
-                    phrase = self.voice.listen()
-                    if 'yes' in phrase:
-                        self.state = 'Action_based'
-                        response = 'Deactivating chat mode'
-                        print(f'Alice: {response}')
-                    else:
-                        response = self.chat.get_response(phrase)
-                else:
-                    response = self.chat.get_response(phrase)
-                print(f'Alice: {response}')
-                if response != 'error':
-                    self.voice.say(response)
-
-    def get_action(self, action):
-        if action == "chat":
             phrase = self.voice.listen()
-            if "yes" in phrase or "yeah" in phrase:
-                self.state = "Chat_mode"
-        elif action == "weather":
-            phrase = self.weather.get_weather()
-            self.voice.say(phrase)
+            action, application = self.processor.analyse(phrase)
+            print(action, application)
+            if action is None and application is None:
+                print("Couldn't understand")
+            else:
+                response = self.processor.get_response(action, application)
+                print(f'Alice: {response}')
+                self.voice.say(response)
+
+            if action == 'start':
+                self.action_start(application)
+            elif action == 'get':
+                self.action_get(application)
+            elif action == 'quit':
+                self.action_quit(application)
+            elif action is None and (application != 'greeting' or application != 'farewell'):
+                print('Unrecognized')
+
+    def action_start(self, application):
+        if application == 'cleaning':
+            print('Not yet implemented')
+
+        elif application == 'chat':
+            phrase = self.voice.listen()
+            if 'yes' in phrase:
+                self.voice.say('Then we can start')
+                while True:
+                    phrase = self.voice.listen()
+                    print(f'User: {phrase}')
+                    action, application = self.processor.analyse(phrase)
+                    print(action, application)
+                    if action == 'quit' and application == 'chat':
+                        response = self.processor.get_response(action, application)
+                        print(f'Alice: {response}')
+                        self.voice.say(response)
+                        break
+                    response = self.chat.get_response(phrase)
+                    print(f'Alice: {response}')
+                    self.voice.say(response)
+
+    def action_get(self, application):
+        if application == 'weather':
+            response = self.weather.get_weather()
+            self.voice.say(response)
+
+    def action_quit(self, application):
+        if application == 'cleaning':
+            print('not yet implemented')

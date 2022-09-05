@@ -1,0 +1,34 @@
+{
+
+
+  "actions": [
+    {
+      "tag": "start",
+      "patterns": [
+        "start",
+        "launch"
+      ]
+    },
+
+    {
+      "tag": "quit",
+      "patterns": [
+        "quit",
+        "stop"
+      ]
+    },
+
+    {
+      "tag": "get",
+      "patterns": [
+        "give me",
+        "get",
+        "show",
+        "tell",
+        "display"
+      ]
+    }
+
+
+  ]
+}

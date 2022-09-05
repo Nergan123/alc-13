@@ -1,0 +1,58 @@
+{
+  "applications": [
+
+    {
+      "tag": "greeting",
+      "patterns": [
+        "greeting",
+        "hello",
+        "hi"
+      ]
+    },
+
+    {
+      "tag": "introduction",
+      "patterns": [
+        "name",
+        "introduc",
+        "who"
+      ]
+    },
+
+    {
+      "tag": "farewell",
+      "patterns": [
+        "bye",
+        "see you",
+        "take care",
+        "farewell"
+      ]
+    },
+
+    {
+      "tag": "chat",
+      "patterns": [
+        "chat",
+        "talk"
+      ]
+    },
+
+    {
+      "tag": "weather",
+      "patterns": [
+        "weather",
+        "forecast",
+        "outside"
+      ]
+    },
+
+    {
+      "tag": "cleaning",
+      "patterns": [
+        "cleaning"
+      ]
+    }
+
+
+  ]
+}

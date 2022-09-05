@@ -1,0 +1,84 @@
+{
+  "requests": [
+
+
+    {
+      "tag": " greeting",
+      "response": [
+        "Greetings, master!",
+        "Hello!",
+        "I have been waiting.",
+        "Good day."
+      ]
+    },
+
+    {
+      "tag": " introduction",
+      "response": [
+        "I am ALC thirteen, code name Alice",
+        "Your house assistant Alice",
+        "I am Alice, nice to meet you"
+      ]
+    },
+
+    {
+      "tag": " farewell",
+      "response": [
+        "I will be waiting.",
+        "Hope to see you soon!",
+        "Goodbye, master!"
+      ]
+    },
+
+    {
+      "tag": "start cleaning",
+      "response": [
+        "Pie is on his way",
+        "We have work to do, Pie.",
+        "Launching cleaning",
+        "Cleaning started"
+      ]
+    },
+
+    {
+      "tag": "quit cleaning",
+      "response": [
+        "Finishing cleaning",
+        "Pie, it is time to go back",
+        "House is clean enough",
+        "Quiting cleaning",
+        "Sending Pie back to base"
+      ]
+    },
+
+    {
+      "tag": "get weather",
+      "response": [
+        "Just a moment, master. I'll check",
+        "Let me look outside the window",
+        "Judging by the clouds"
+      ]
+    },
+
+    {
+      "tag": "start chat",
+      "response": [
+        "Perhaps, you wish to activate chat mode?",
+        "Do you want to talk?",
+        "Do you wish to chat?"
+      ]
+    },
+
+    {
+      "tag": "quit chat",
+      "response": [
+        "We can always talk again later",
+        "It was nice talking to you",
+        "Let's chat again soon"
+      ]
+    }
+
+
+
+  ]
+}

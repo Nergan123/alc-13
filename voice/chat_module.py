@@ -13,6 +13,7 @@ class Chat_module:
 
     def get_response(self, phrase):
         output = None
+        print(output)
         input_ids = self.tokenizer.encode(phrase + self.tokenizer.eos_token, return_tensors="pt")
         if self.count == 0:
             self.bot_input_ids = input_ids
@@ -39,5 +40,6 @@ class Chat_module:
             counter += 1
             if counter > 5:
                 output = "Sorry I couldn't understand."
-                break
+                return output
+        print(output)
         return output
