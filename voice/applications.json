@@ -49,7 +49,8 @@
     {
       "tag": "cleaning",
       "patterns": [
-        "cleaning"
+        "cleaning",
+        "clean"
       ]
     }
 

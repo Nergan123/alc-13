@@ -2,3 +2,5 @@ ffmpeg_util
 .idea
 __pychache__
 .env
+*.log
+alice_logs
